@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 export class Alerts extends Component {
     static propTypes ={
-        erorr: PropTypes.object.isRequired,
+        error: PropTypes.object.isRequired,
         message: PropTypes.object.isRequired
     }
     componentDidUpdate(prevProps){
@@ -20,6 +20,15 @@ export class Alerts extends Component {
             if(error.msg.message){
                 alert.error(`Message: ${error.msg.message.join()}`)
             }
+            if(error.msg.username){
+                alert.error(`Username: ${error.msg.username.join()}`)
+            }
+            if(error.msg.password){
+                alert.error(`Password: ${error.msg.password.join()}`)
+            }
+            if(error.msg.non_field_errors){
+                alert.error(error.msg.non_field_errors)
+            }
         }
         if(message !== prevProps.message){
             if(message.deleteLead){
@@ -27,6 +36,13 @@ export class Alerts extends Component {
             }
             if(message.addLead){
                 alert.success(message.addLead)
+            }
+            if(message.registerUser){
+                alert.success(message.registerUser)
+                
+            }
+            if(message.passwordsNotMatch){
+                alert.error(message.passwordsNotMatch)
             }
         }
     }
