@@ -6,6 +6,9 @@ import { Visibility,VisibilityOff } from '@mui/icons-material';
 import {connect} from 'react-redux'
 import { login } from '../../actions/auth';
 import { Navigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
+let nextPage = '/'
 
 export class Login extends Component {
   constructor(props){
@@ -19,12 +22,23 @@ export class Login extends Component {
         usernameHelperText:"",
         passwordHelperText:""
     }
+    console.log("checking location")
+    if('location' in this.props){
+      console.log('location: ',this.props.location)
+      if('state' in this.props.location){
+        console.log('state: ',this.props.location.state)
+        if('nextPage' in this.props.location.state){
+            console.log('nextPage: ',this.props.location.state.nextPage)
+            nextPage = this.props.location.state.nextPage
+        }
+      }
+   }
 }
 
 static propTypes = {
     login: PropTypes.func.isRequired,
     isAuthenticated:PropTypes.bool,
-    error:PropTypes.object.isRequired
+    error:PropTypes.object.isRequired,
 }
 
 componentDidUpdate(prevProps){
@@ -95,8 +109,9 @@ onSubmit = e => {
     
 
   render() {
+
     if(this.props.isAuthenticated){
-      return <Navigate to="/"/>
+      return <Navigate to={nextPage}/>
     }
     return (
       <div style={{ 

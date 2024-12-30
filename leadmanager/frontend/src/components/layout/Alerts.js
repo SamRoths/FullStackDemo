@@ -29,6 +29,9 @@ export class Alerts extends Component {
             if(error.msg.non_field_errors){
                 alert.error(error.msg.non_field_errors)
             }
+            if(error.msg.details){
+                alert.error(error.msg.details)
+            }
         }
         if(message !== prevProps.message){
             if(message.deleteLead){
@@ -43,6 +46,30 @@ export class Alerts extends Component {
             }
             if(message.passwordsNotMatch){
                 alert.error(message.passwordsNotMatch)
+            }
+            if(message.updatedGroupUser){
+                alert.success(message.updatedGroupUser)
+            }
+            if(message.updatedGroup){
+                alert.success(message.updatedGroup)
+            }
+            if(message.invitedUser){
+                alert.success(message.invitedUser)
+            }
+            if(message.assignedSS){
+                alert.success(message.assignedSS)
+            }
+            if(message.promotedGroupUser){
+                alert.success(message.promotedGroupUser)
+            }
+            if(message.removedGroupUser){
+                alert.success(message.removedGroupUser)
+            }
+            if(message.leaveGroup){
+                alert.success(message.leaveGroup)
+            }
+            if(message.deletedGroup){
+                alert.success(message.deletedGroup)
             }
         }
     }

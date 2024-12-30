@@ -1,0 +1,7 @@
+export const CREATE_GROUP_FORM = "CREATE_GROUP_FORM"
+export const NO_GROUPS = "NO_GROUPS"
+export const DISPLAY_GROUP = "DISPLAY_GROUP"
+export const DISPLAY_GROUP_USER = "DISPLAY_GROUP_USER"
+export const EDIT_GROUP = "EDIT_GROUP"
+export const EDIT_GROUP_USER = "EDIT_GROUP_USER"
+export const INVITE_USER = "INVITE_USER"

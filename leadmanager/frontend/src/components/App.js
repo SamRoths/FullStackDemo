@@ -19,12 +19,14 @@ import {HashRouter as Router, Route,Routes, Redirect} from "react-router-dom"
 import PrivateRoute from './common/PrivateRoute';
 
 import { loadUser } from '../actions/auth';
+import SSHome from './secretsanta/SSHome';
+import LoginWrapper from './accounts/LoginWrapper';
 
 
 //alert options
 const alertOption = {
     timeout:10000,
-    position: 'top center'
+    position: 'bottom center',
 }
 
 
@@ -36,23 +38,27 @@ class App extends Component{
 
     render() {
         return (
+            <div >
             <Provider store = {store}>
-                <AlertProvider template={AlertTemplate} {...alertOption}>
+                <AlertProvider  template={AlertTemplate} {...alertOption}>
                     <Router>
                     <Fragment>
                         <ResponsiveAppBar/>
                         <Alerts/>
                         <div className = "container">
                             <Routes>
-                                <Route exact path ="/" element = {<PrivateRoute><Dashboard/></PrivateRoute>}/>
+                                <Route exact path ="/" element = {<PrivateRoute afterLogin='/'><Dashboard/></PrivateRoute>}/>
+                                <Route exact path="/secretsanta" element={<PrivateRoute afterLogin='/secretsanta'><SSHome/></PrivateRoute>}/>
                                 <Route exact path="/register" element={<Register/>}/>
-                                <Route exact path="/login" element={<Login/>}/>
+                                <Route exact path="/login" element={<LoginWrapper/>}/>
                             </Routes>
                         </div>
+                        
                     </Fragment>
                     </Router>
                 </AlertProvider>
             </Provider>
+            </div>
             
         )
     }

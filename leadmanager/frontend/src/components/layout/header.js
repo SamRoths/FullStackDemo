@@ -17,7 +17,13 @@ import { Link } from 'react-router-dom';
 import NavbarUser from './NavbarUser';
 
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [{
+  name:'Secret Santa',
+  link:'/secretsanta'
+},{
+  name:'leads',
+  link:'/'
+}];
 const settings = [
     {
       name:'Login',
@@ -46,7 +52,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky" sx={{zIndex:1400}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -95,10 +101,11 @@ function ResponsiveAppBar() {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Link className="nav-link" color="inherit" underline="none" to={page.link} sx={{ textAlign: 'center' }}>{page.name}</Link>
                 </MenuItem>
               ))}
+                
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -124,11 +131,11 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                <Link className="nav-link" color="inherit" underline="none" to={page.link} sx={{ textAlign: 'center' }}>{page.name}</Link>
               </Button>
             ))}
           </Box>
