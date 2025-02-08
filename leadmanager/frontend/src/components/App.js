@@ -17,6 +17,7 @@ import Register from './accounts/Register';
 import {HashRouter as Router, Route,Routes, Redirect} from "react-router-dom"
 
 import PrivateRoute from './common/PrivateRoute';
+import ProjectsHome from './portfolio/ProjectsHome';
 
 import { loadUser } from '../actions/auth';
 import SSHome from './secretsanta/SSHome';
@@ -49,6 +50,7 @@ class App extends Component{
                             <Routes>
                                 <Route exact path ="/" element = {<PrivateRoute afterLogin='/'><Dashboard/></PrivateRoute>}/>
                                 <Route exact path="/secretsanta" element={<PrivateRoute afterLogin='/secretsanta'><SSHome/></PrivateRoute>}/>
+                                <Route exact path ='/projects' element = {<ProjectsHome/>}/>
                                 <Route exact path="/register" element={<Register/>}/>
                                 <Route exact path="/login" element={<LoginWrapper/>}/>
                             </Routes>

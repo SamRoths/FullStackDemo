@@ -23,7 +23,10 @@ const pages = [{
 },{
   name:'leads',
   link:'/'
-}];
+},{
+  name:'Projects',
+  link:'/projects'
+ }];
 const settings = [
     {
       name:'Login',
