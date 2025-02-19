@@ -57,20 +57,15 @@ export default function ProjectCard({
 
   return (
     
-    <Card variant='outlined' >
-      
+    <Card fullWidth variant='outlined' >
+      <CardActionArea>
+      <Link to={link} style={{ textDecoration: 'none' }}>
       <CardHeader
         
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
         title={title}
         subheader={date}
       />
-      <CardActionArea>
-      <Link to={link} style={{ textDecoration: 'none' }}>
+      
       <CardMedia
         component="img"
         height="194"
@@ -84,16 +79,7 @@ export default function ProjectCard({
       </CardContent>
       </Link>
       </CardActionArea>
-      <CardActions disableSpacing>
-        <IconButton aria-label="like">
-          <FavoriteIcon />
-          <Typography>{numLikes?numLikes:''}</Typography>
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        
-      </CardActions>
+
       
     </Card>
     

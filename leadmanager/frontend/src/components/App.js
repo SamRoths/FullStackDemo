@@ -13,7 +13,7 @@ import AlertTemplate from 'react-alert-template-basic';
 import Alerts from './layout/Alerts';
 import Login from "./accounts/Login";
 import Register from './accounts/Register';
-
+import Biography from './portfolio/Biography'
 import {HashRouter as Router, Route,Routes, Redirect} from "react-router-dom"
 
 import PrivateRoute from './common/PrivateRoute';
@@ -64,13 +64,15 @@ class App extends Component{
                     <Fragment>
                         <ResponsiveAppBar/>
                         <Alerts/>
-                        <div className = "container">
+                        <div>
                             <Routes>
-                                <Route exact path ="/" element = {<PrivateRoute afterLogin='/'><Dashboard/></PrivateRoute>}/>
+                                <Route exact path ="/leads" element = {<PrivateRoute afterLogin='/leads'><Dashboard/></PrivateRoute>}/>
                                 <Route exact path="/secretsanta" element={<PrivateRoute afterLogin='/secretsanta'><SSHome/></PrivateRoute>}/>
                                 <Route exact path ='/projects' element = {<ProjectsHome/>}/>
                                 <Route exact path="/register" element={<Register/>}/>
                                 <Route exact path="/login" element={<LoginWrapper/>}/>
+
+                                <Route exact path="/" element={<Biography/>}/>
 
                                 <Route exact path ='/projects/climbing-detection' element = {<Climbingdetection/>}/>
                                 <Route exact path ='/projects/comfi' element = {<Comfi/>}/>

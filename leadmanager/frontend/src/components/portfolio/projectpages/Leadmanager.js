@@ -8,7 +8,7 @@ const projectData = {
   tools:['Django Rest Framework','React', 'Material UI','React Redux','AWS'], 
   summary:'This simple app acts as a tracker for different interations you may have had whether it for in Sales, Networking or other purposes. Every entry created is attached to your account and cannot be viewed by others.', 
   role: 'As a solo developer I built every piece of this full stack web app. This includes but is not limited to Frontend UI/UX, API endpoints, and database structure',
-  demoLink:'/', 
+  demoLink:'/leads', 
   images:['media/images/LeadManagerImage1.PNG', 'media/images/LeadManagerImage2.PNG','media/images/LeadManagerImage3.PNG'] 
 }
 

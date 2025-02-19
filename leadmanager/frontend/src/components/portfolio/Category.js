@@ -2,6 +2,7 @@ import React from 'react'
 import ProjectCard from './ProjectCard'
 import { Accordion,AccordionSummary,AccordionDetails,Typography, Grid2, Icon } from '@mui/material'
 import { ExpandMore, Language, MiscellaneousServices, QueryStats, SportsEsports } from '@mui/icons-material'
+import { Box } from '@mui/material'
 
 export default function Category({
   title='Category Title',
@@ -25,7 +26,17 @@ export default function Category({
     }
   }
   return (
-    <Accordion defaultExpanded>
+    <Box sx={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      color: "#333",
+      padding:1,
+      marginLeft: 0,
+    }}>
+    <Accordion defaultExpanded sx={{ maxWidth: 800, mt: 3 }}>
         <AccordionSummary
           expandIcon={<ExpandMore />}
           aria-controls="panel1-content"
@@ -36,10 +47,11 @@ export default function Category({
         </AccordionSummary>
         <AccordionDetails>
           <Grid2 container spacing={2}>
-            {data.map((project)=>(<Grid2 item size = {4} style={{display: 'flex'}}><ProjectCard {...project} /></Grid2>))}
+            {data.map((project)=>(<Grid2 item size = {12} style={{display: 'flex'}}><ProjectCard {...project} /></Grid2>))}
           </Grid2>
           
         </AccordionDetails>
       </Accordion>
+      </Box>
   )
 }

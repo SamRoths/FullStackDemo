@@ -56,7 +56,7 @@ export class NavbarUser extends Component {
         <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={this.handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt={this.props.auth.user.username} src="http://localhost:8000/media/images/IMG_6876.jpg" />
+                <Avatar alt={this.props.auth.user.username}  />
               </IconButton>
             </Tooltip>
             <Menu
