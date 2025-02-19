@@ -64,7 +64,7 @@ const Biography = () => {
             </CardContent>
           </Card>
         </Grid>
-        <Button fullWidth component="a" href="/projects" variant="solid" sx={{ mt: 3, backgroundColor: "#0056b3", color: "#ffffff", fontWeight: "bold", fontSize: "1.5rem", padding: "10px 20px", borderRadius: "8px" }}>
+        <Button fullWidth component="a" href="/#/projects" variant="solid" sx={{ mt: 3, backgroundColor: "#0056b3", color: "#ffffff", fontWeight: "bold", fontSize: "1.5rem", padding: "10px 20px", borderRadius: "8px" }}>
         View My Work
       </Button>
       </Grid>
