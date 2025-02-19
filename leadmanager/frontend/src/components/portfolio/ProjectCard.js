@@ -14,6 +14,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Link } from 'react-router-dom';
+import { CardActionArea } from '@mui/material';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -44,6 +46,7 @@ export default function ProjectCard({
     description='',
     image,
     date = new Date().toLocaleDateString(),
+    link = '/',
     numLikes =0
 }) {
   const [expanded, setExpanded] = React.useState(false);
@@ -53,7 +56,9 @@ export default function ProjectCard({
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    
+    <Card variant='outlined' >
+      
       <CardHeader
         
         action={
@@ -64,17 +69,21 @@ export default function ProjectCard({
         title={title}
         subheader={date}
       />
+      <CardActionArea>
+      <Link to={link} style={{ textDecoration: 'none' }}>
       <CardMedia
         component="img"
         height="194"
         image={image}
-        alt='https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg'
+        alt=''
       />
       <CardContent>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
           {description}
         </Typography>
       </CardContent>
+      </Link>
+      </CardActionArea>
       <CardActions disableSpacing>
         <IconButton aria-label="like">
           <FavoriteIcon />
@@ -87,5 +96,6 @@ export default function ProjectCard({
       </CardActions>
       
     </Card>
+    
   );
 }

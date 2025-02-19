@@ -22,7 +22,16 @@ import ProjectsHome from './portfolio/ProjectsHome';
 import { loadUser } from '../actions/auth';
 import SSHome from './secretsanta/SSHome';
 import LoginWrapper from './accounts/LoginWrapper';
-
+import Climbingdetection from './portfolio/projectpages/Climbingdetection';
+import Comfi from './portfolio/projectpages/Comfi';
+import Imagegen from './portfolio/projectpages/Imagegen';
+import Impulse from './portfolio/projectpages/Impulse';
+import Kilterboard from './portfolio/projectpages/Kilterboard';
+import Leadmanager from './portfolio/projectpages/Leadmanager';
+import Seamline from './portfolio/projectpages/Seamline';
+import Secretsanta from './portfolio/projectpages/Secretsanta';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { CssVarsProvider, extendTheme } from '@mui/joy';
 
 //alert options
 const alertOption = {
@@ -30,6 +39,14 @@ const alertOption = {
     position: 'bottom center',
 }
 
+  // Custom Theme with Roboto Flex
+const theme = extendTheme({
+    fontFamily: {
+      body: "Roboto Flex, sans-serif",
+      display: "Roboto Flex, sans-serif",
+      code: "monospace",
+    },
+  });
 
 
 class App extends Component{
@@ -40,6 +57,7 @@ class App extends Component{
     render() {
         return (
             <div >
+
             <Provider store = {store}>
                 <AlertProvider  template={AlertTemplate} {...alertOption}>
                     <Router>
@@ -53,6 +71,15 @@ class App extends Component{
                                 <Route exact path ='/projects' element = {<ProjectsHome/>}/>
                                 <Route exact path="/register" element={<Register/>}/>
                                 <Route exact path="/login" element={<LoginWrapper/>}/>
+
+                                <Route exact path ='/projects/climbing-detection' element = {<Climbingdetection/>}/>
+                                <Route exact path ='/projects/comfi' element = {<Comfi/>}/>
+                                <Route exact path ='/projects/image-gen' element = {<Imagegen/>}/>
+                                <Route exact path ='/projects/impulse' element = {<Impulse/>}/>
+                                <Route exact path ='/projects/kilterboard' element = {<Kilterboard/>}/>
+                                <Route exact path ='/projects/leadmanager' element = {<Leadmanager/>}/>
+                                <Route exact path ='/projects/seamline' element = {<Seamline/>}/>
+                                <Route exact path ='/projects/secret-santa' element = {<Secretsanta/>}/>
                             </Routes>
                         </div>
                         
@@ -60,6 +87,7 @@ class App extends Component{
                     </Router>
                 </AlertProvider>
             </Provider>
+
             </div>
             
         )

@@ -23,11 +23,11 @@ export class Login extends Component {
         passwordHelperText:""
     }
     console.log("checking location")
-    if('location' in this.props){
+    if(this.props.location){
       console.log('location: ',this.props.location)
-      if('state' in this.props.location){
+      if(this.props.location.state){
         console.log('state: ',this.props.location.state)
-        if('nextPage' in this.props.location.state){
+        if(this.props.location.state.nextPage){
             console.log('nextPage: ',this.props.location.state.nextPage)
             nextPage = this.props.location.state.nextPage
         }

@@ -40,7 +40,6 @@ export class Leads extends Component {
                 <Table sx={{ minWidth: 100 }} aria-label="simple table">
                     <TableHead>
                     <TableRow>
-                        <TableCell>ID</TableCell>
                         <TableCell align="right">Name</TableCell>
                         <TableCell align="right">Email</TableCell>
                         <TableCell align="right">Message</TableCell>
@@ -53,9 +52,6 @@ export class Leads extends Component {
                         key={row.id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
-                        <TableCell component="th" scope="row">
-                            {row.id}
-                        </TableCell>
                         <TableCell align="right">{row.name}</TableCell>
                         <TableCell align="right">{row.email}</TableCell>
                         <TableCell align="right">{row.message}</TableCell>
