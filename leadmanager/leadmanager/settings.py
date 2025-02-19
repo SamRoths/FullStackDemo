@@ -22,6 +22,8 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'mediafiles')
 #url used to access images
 MEDIA_URL = '/media/'
 
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -137,6 +139,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
