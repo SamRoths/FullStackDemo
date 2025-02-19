@@ -11,7 +11,6 @@ const Biography = () => {
         alignItems: "center",
         justifyContent: "center",
         width: "100vw",
-        height: "100vh",
         textAlign: "center",
         gap: 3,
         background: "linear-gradient(135deg, #f5f7fa, #c3cfe2)",
