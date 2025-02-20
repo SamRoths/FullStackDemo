@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Sheet } from "@mui/joy";
+import { Typography, Sheet, AccordionGroup } from "@mui/joy";
 import { GAME_DEV, ML, OTHER, WEB_DEV } from "./types";
 import Category from "./Category";
 import { URL_BASE } from "../../Constants";
@@ -91,8 +91,9 @@ function ProjectsHome() {
     <div style={{padding:40,
       margin:'auto'
     }}>
+      <AccordionGroup>
             {categories.map((category)=>(<Category title={category} data={data[category]} icon={icons[category]}/>))}
-
+      </AccordionGroup>
         
     </div> 
     );

@@ -68,7 +68,7 @@ export default function ProjectCard({
       
       <CardMedia
         component="img"
-        height="194"
+        height="300"
         image={image}
         alt=''
       />

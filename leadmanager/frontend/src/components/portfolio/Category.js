@@ -1,8 +1,10 @@
 import React from 'react'
 import ProjectCard from './ProjectCard'
-import { Accordion,AccordionSummary,AccordionDetails,Typography, Grid2, Icon } from '@mui/material'
+import {Icon} from '@mui/material'
+import { Accordion,AccordionSummary,AccordionDetails,Typography, Grid } from '@mui/joy'
 import { ExpandMore, Language, MiscellaneousServices, QueryStats, SportsEsports } from '@mui/icons-material'
 import { Box } from '@mui/material'
+import PortfolioPreviewCard from './PortfolioPreviewCard'
 
 export default function Category({
   title='Category Title',
@@ -46,9 +48,9 @@ export default function Category({
                     }} >{getIcon()}{title}</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Grid2 container spacing={2}>
-            {data.map((project)=>(<Grid2 item size = {12} style={{display: 'flex'}}><ProjectCard {...project} /></Grid2>))}
-          </Grid2>
+          <Grid container spacing={2}>
+            {data.map((project)=>(<Grid item size = {12} style={{display: 'flex'}}><PortfolioPreviewCard {...project} /></Grid>))}
+          </Grid>
           
         </AccordionDetails>
       </Accordion>
